@@ -1,1 +1,2 @@
-# practice-netlify-cms
+# BWNS DEMO
+uses the ICF Nex+ Library with USWDS
