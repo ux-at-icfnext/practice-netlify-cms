@@ -1,6 +1,7 @@
 backend:
   name: github
   repo: ux-at-icfnext/practice-netlify-cms # Path to your GitHub repository
+  netlify.configure({'site_id': gifted-boyd-d36ba9.netlify.com});
   # optional, defaults to master
   # branch: main
 media_folder: "assets/img/uploads"
