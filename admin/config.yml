@@ -4,3 +4,25 @@ backend:
   # optional, defaults to master
   # branch: main
 media_folder: "assets/img/uploads"
+
+collections:
+  - label: "Posts"
+    name: "posts"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - label: "Layout"
+        name: "layout"
+        widget: "hidden"
+        default: "default"
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Description"
+        name: "desc"
+        widget: "string"
+      - label: "Body"
+        name: "body"
+          widget: "markdown"
+
