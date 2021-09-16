@@ -12,15 +12,14 @@
     <!-- Include the script that builds the page and powers Netlify CMS -->
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
     <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
+      handleLogin = (e, config) => {
+        e.preventDefault();
+        let auth;
+        if (document.location.host.split(':')[0] === 'localhost') {
+          auth = new Authenticator({ site_id: 'gifted-boyd-d36ba9.netlify.com' });
+        } else {
+          auth = new Authenticator({ site_id: config.getIn(["backend", "site_id"], null) });
+        }
     </script>
   </body>
 </html>
